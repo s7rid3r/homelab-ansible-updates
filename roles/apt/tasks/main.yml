@@ -1,0 +1,14 @@
+---
+
+- name: Update packages
+  ansible.builtin.apt:
+    upgrade: true
+    update_cache: true
+
+- name: Reboot
+  ansible.builtin.reboot:
+
+- name: Wait for SSH
+  ansible.builtin.wait_for:
+    port: 22
+    delay: 60

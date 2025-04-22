@@ -1,0 +1,23 @@
+docker:
+  hosts:
+    dockerhost.homelab:
+      ansible_host: 192.168.1.100
+      ansible_become_pass: '{{ dockerhost_become_pass }}'
+  vars:
+    ansible_user: admin
+
+proxmox:
+  hosts:
+    proxmox.homelab:
+      ansible_host: 192.168.1.150
+      ansible_become_pass: '{{ proxmox_become_pass }}'
+  vars:
+    ansible_user: root
+
+ubuntu:
+  hosts:
+    ubuntu.homelab:
+      ansible_host: 192.168.1.200
+      ansible_become_pass: '{{ ubuntu_become_pass }}'
+  vars:
+    ansible_user: admin
