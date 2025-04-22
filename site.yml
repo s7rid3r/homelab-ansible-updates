@@ -1,7 +1,7 @@
 ---
 
-- hosts: ubuntu, proxmox
-  name: Apt Updates
+- hosts: ubuntu
+  name: Ubuntu Updates
   become: true
   roles:
     - apt
@@ -10,3 +10,8 @@
   name: Docker Updates
   roles:
     - docker
+
+- hosts: proxmox
+  name: Proxmox Updates
+  roles:
+    - apt
